@@ -24,3 +24,16 @@ void print_list (int* list, int len)
     }
     printf("}\n");
 }
+
+void _print_list (int* list, int L, int R)
+{
+    printf("{");
+    for (int i = L; i < R; ++i)
+    {
+        printf("%d", list[i]);
+        if (i < R - 1)
+            printf(", ");
+    }
+    printf("}\n");
+    
+}
