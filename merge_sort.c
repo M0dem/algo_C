@@ -9,13 +9,6 @@
 // August 13, 2020
 */
 
-void swap (int* a, int* b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 void merge (int* list, int L, int m, int R)
 {
     int Li = L;
