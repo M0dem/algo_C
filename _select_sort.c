@@ -23,5 +23,3 @@ void select_sort (int* list, int len)
         swap(&list[i], &list[k]);
     }
 }
-
-

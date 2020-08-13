@@ -3,13 +3,12 @@
 #include <time.h>
 
 // generate a randomly sorted list
-// with elements of defined `variance`
-int* gen_list (int len, int variance)
+int* gen_list (int len, int upper)
 {
     int* list = calloc(len, sizeof(int));
     srand(time(NULL));
     for (int i = 0; i < len; ++i)
-        list[i] = rand() % variance;
+        list[i] = rand() % upper;
 
     return list;
 }

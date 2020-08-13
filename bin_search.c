@@ -4,32 +4,22 @@
 #include "_select_sort.h"
 #include "utility.h"
 
-int bin_search (int element, int* list, int low, int high)
+int bin_search (int* A, int n, int T)
 {
-    int mid;
-    while (1)
-    {
-        mid = (high - low) / 2;
-        if (list[mid] == element)
-            return mid;
-        else if (list[mid] > element)
-            high = mid - 1;
-        else if (list[mid] < element)
-            low = mid + 1;
-    }
-}
+    int L = 0;
+    int R = n - 1;
+    int m;
 
-int _bin_search (int element, int* list, int low, int high)
-{
-    int mid = (high - low) / 2;
-    if (list[mid] == element)
-        return mid;
-    else if (list[mid] > element)
-        return bin_search(element, list, low, mid - 1);
-    else if (list[mid] < element)
-        return bin_search(element, list, mid + 1, high);
-    else
-        printf("wut?!\n");
+    while (L <= R)
+    {
+        m = (L + R) / 2;
+        if (A[m] < T)
+            L = m + 1;
+        else if (A[m] > T)
+            R = m - 1;
+        else
+            return m;
+    }
 
     return -1;
 }
@@ -37,14 +27,16 @@ int _bin_search (int element, int* list, int low, int high)
 int main ()
 {
     int len = 15;
-    int* list = gen_list(len, 50);
-    
+    int upper = 50;
+    int* list = gen_list(len, upper);
+        
     print_list(list, len);
     select_sort(list, len);
     print_list(list, len);
 
-    int i = bin_search(25, list, 0, len);
-    printf("\t%d\n", i);
+    int target = 33;
+    int i = bin_search(list, len, target);
+    printf("\tlist[%d] = %d\n", i, target);
     
     free(list);
     return 0;    

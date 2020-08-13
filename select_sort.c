@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "utility.h"
+
 /*
 // Selection Sort
 // Algorithm Implementation
@@ -33,18 +35,6 @@ void select_sort (int* list, int len)
         }
         swap(&list[i], &list[k]);
     }
-}
-
-void print_list (int* list, int len)
-{
-    printf("{");
-    for (int i = 0; i < len; ++i)
-    {
-        printf("%d", list[i]);
-        if (i != len - 1)
-            printf(", ");
-    }
-    printf("}\n");
 }
 
 int main ()
