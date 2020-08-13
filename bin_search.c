@@ -4,6 +4,12 @@
 #include "_select_sort.h"
 #include "utility.h"
 
+/*
+// Binary Search
+// Nathanael Key
+// August 13, 2020
+*/
+
 int bin_search (int* A, int n, int T)
 {
     int L = 0;

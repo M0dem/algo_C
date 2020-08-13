@@ -6,7 +6,6 @@
 
 /*
 // Selection Sort
-// Algorithm Implementation
 // Nathanael Key
 // August 13, 2020
 */
