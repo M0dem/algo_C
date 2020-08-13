@@ -29,6 +29,7 @@ void merge (int* list, int L, int m, int R)
         }
     }
 
+    // transcribe our `copy` array onto `list`
     for (int k = 0; k < len; ++k)
         list[k + L] = copy[k];
 
@@ -51,8 +52,8 @@ void merge_sort (int* list, int L, int R)
 int main ()
 {
     int* list;
-    int n = 8;
-    int upper = 25;
+    int n = 15;
+    int upper = 50;
     list = gen_list(n, upper);
     
     print_list(list, n);
