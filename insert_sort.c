@@ -29,8 +29,8 @@ void insert_sort (int* list, int len)
 
 int main ()
 {
-    int len = 8;
-    int upper = 20;
+    int len = 15;
+    int upper = 50;
     int* list = gen_list(len, upper);
 
     print_list(list, len);
