@@ -4,7 +4,7 @@
 #include "utility.h"
 
 /*
-// Insertion Sort
+// Bubble Sort
 // Nathanael Key
 // August 14, 2020
 */
@@ -16,18 +16,18 @@ void swap (int* a, int* b)
     *b = temp;
 }
 
-void insert_sort (int* list, int len)
+void bubble_sort (int* list, int len)
 {
-    int n;
-    for (int i = 1; i < len; ++i)
+    int no_sort = 0;
+    while (!no_sort)
     {
-        if (list[i] < list[i - 1])
+        no_sort = 1;
+        for (int i = 0; i < len - 1; ++i)
         {
-            for (int k = i; k > 0; --k)
+            if (list[i] > list[i + 1])
             {
-                swap(&list[k], &list[k - 1]);
-                if (k - 1 == 0 || list[k - 1] > list[k - 2])
-                    break;
+                swap(&list[i], &list[i + 1]);
+                no_sort = 0;
             }
         }
     }
@@ -40,10 +40,9 @@ int main ()
     int* list = gen_list(len, upper);
 
     print_list(list, len);
-    insert_sort(list, len);
+    bubble_sort(list, len);
     print_list(list, len);
 
     free(list);
-
-    return 0;    
+    return 0;
 }
