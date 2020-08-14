@@ -1,4 +1,4 @@
-int* gen_list (int len, int variance);
+int* gen_list (int len, int upper);
 
 void print_list (int* list, int len);
 
